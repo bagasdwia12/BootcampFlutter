@@ -1,0 +1,360 @@
+Materi-4-List dan Maps
+by Achmad Hilmy Firdaus
+
+Referensi
+
+https://www.youtube.com/watch?v=zvao-m2BDVA
+1. List 
+A. Pengenalan List
+
+List merupakan tipe data yang berisikan kumpulan data
+Di bahasa pemrograman lain, tipe data ini dikenal dengan tipe data Array
+Saat kita membuat List, kita perlu menentukan isi dari tipe data List
+Untuk membuat data List, kita bisa menggunakan []
+Di  Dart, semua tipe data adalah object, dimana List sendiri memiliki property, method dan operator 
+ 
+
+Untuk membuat list, kita bisa tentukan tipe datanya, misal :
+     List<TipeData> namaVariable = [];
+
+Atau bisa menggunakan kata kunci var atau final :
+    var namaVariable = <TipeData>[];
+    final namaVariable = <TipeData>[];
+
+ 
+
+Berikut merupakan contoh penggunaan list 
+
+void main() {
+
+List<int> list = [23,24,25];
+
+print(list[0]);//23
+
+print(list[1]);//24
+
+print(list[2]);//25
+
+}
+ 
+Data di dalam List, bisa kita tambah lebih dari satu, anggap aja List adalah sebuah tabel, dimana kita bisa menambah banyak baris di tabel nya. 
+
+Untuk menambahkan data ke List, teman-teman dapat gunakan method add(value)
+
+Berikut merupakan contoh penambahan data kedalam list
+
+void main() {
+
+var names = [];
+
+names.add('Rafiyandi');
+
+names.add('Salamon');
+
+names.add('Joko');
+
+print(names);
+}
+
+B. Index
+Selain menambahkan data di List, kita juga bisa mengubah data di List atau mendapatkan data di List
+Saat kita menambahkan data di List, secara otomatis data tersebut memiliki index (int), index ini digunakan untuk kita mengakses, mengubah atau menghapus data di List
+Index di List dimulai dari angka 0, dan akan terus bertambah seiring jumlah data yang kita masukkan
+Artinya jika kita memiliki jumlah data di List sebanyak length, index terakhir di List adalah length - 1
+Manipulasi data pada list
+
+ 
+Operator / Method
+
+Keterangan
+
+list.add(value)
+
+Menambah data ke List
+
+list[index]
+
+Mengambil data di List
+
+list[index] = value 
+
+Mengubah data di List
+
+list.removeAt(index)
+
+Menghapus data di List, index secara otomatis akan bergeser
+
+ 
+
+
+Contoh mengubah data :
+
+ 
+
+void main() {
+
+var names = [];
+
+names.add('Rafiyandi');
+
+names.add('Salamon');
+
+names.add('Joko');
+
+names[0] = 'Joni';
+
+print(names);
+
+}
+
+Contoh mengambil data
+
+void main() {
+
+var names = ['Rafiyandi','Salamon','Joko'];
+
+print(names[0]);
+
+}
+Contoh hapus data
+void main() {
+
+var names = ['Rafiyandi','Salamon','Joko'];
+
+names.removeAt(2);
+
+print(names);
+
+}
+2. Tipe Data Map
+A. Pengenalan List
+
+Map adalah tipe data key-value, key mirip seperti index, value adalah data nya
+Sekilas mirip dengan List, yang membedakan adalah, index pada List sudah diatur oleh List secara otomatis, dan nilainya berupa int auto increment dimulai dari nol
+Sedangkan pada Map, key nya bisa ditentukan dengan tipe data apapun, dan kita perlu tentukan secara manual key nya ketika memasukkan value nya
+Jika kita memasukkan dengan key yang sudah ada, secara otomatis data dengan key lama akan diganti dengan data yang baru
+Untuk membuat Map, kita menggunakan perintah sebagai berikut :
+     Map<TipeKey, TipeValue> namaVariable = {};
+     var namaVariable = Map<TipeKey, TipeValue>();
+     var namaVariable = <TipeKey, TipeValue>{};
+
+contoh : 
+void main() {
+  
+  Map<String, String> kota = {'jkt' : 'Jakarta', 'bdg' : 'Bandung', 'sby' : 'Surabaya'};
+         
+  print(kota['jkt']);
+  print(kota['bdg']);
+  print(kota['sby']);
+}
+ 
+3. Menampilkan berbagai tipe data 
+Map adalah tipe data key-value, key mirip seperti index, value adalah data nya
+Sekilas mirip dengan List, yang membedakan adalah, index pada List sudah diatur oleh List secara otomatis, dan nilainya berupa int auto increment dimulai dari nol
+Sedangkan pada Map, key nya bisa ditentukan dengan tipe data apapun, dan kita perlu tentukan secara manual key nya ketika memasukkan value nya
+Jika kita memasukkan dengan key yang sudah ada, secara otomatis data dengan key lama akan diganti dengan data yang baru
+Untuk membuat Map, kita menggunakan perintah sebagai berikut :
+   Map<TipeKey, TipeValue> namaVariable = {};
+   var namaVariable = Map<TipeKey, TipeValue>();
+   var namaVariable = <TipeKey, TipeValue>{};
+Contoh deklarasi variable
+
+void main() {
+
+var biodata =<String,String>{};// deklarasi Varibale
+
+biodata['nama'] = 'Rafiyandi';
+
+print(biodata['nama']);
+
+}
+
+Manipulasi Data
+ 
+Operator / Method / Property
+
+Keterangan
+
+map.length
+
+Mendapatkan panjang Map
+
+map[key]
+
+Mendapatkan data di Map
+
+map[key] = value
+
+Mengubah data di Map
+
+map.remove(key)
+
+Menghapus data di Map
+
+ 
+Contoh manipulasi data
+void main() {
+
+var biodata =<String,String>{};
+
+biodata['nama'] = 'Rafiyandi';
+
+biodata['city'] = 'Jakarta';
+
+biodata['makanan'] = 'Ramen';
+
+print(biodata['city']);
+
+print(biodata['makanan']);
+
+print(biodata);
+
+biodata.remove('city');
+
+print(biodata);
+
+}
+4. List Multidemensi
+Map multidimensi adalah struktur data yang terdiri dari dua atau lebih map yang ditempatkan satu dalam yang lain.
+Setiap map dalam struktur ini biasanya disebut sebagai "dimensi"
+Digunakan untuk mengatur dan mengakses data secara hierarkis.
+Map multidimensi sering digunakan dalam pemrograman untuk merepresentasikan data yang memerlukan hierarki atau tingkat kedalaman yang berbeda.
+var arrayMulti = [
+
+[1, 2, 3],
+
+[4, 5, 6],
+
+[7, 8, 9]
+
+];
+
+// Maka sebagai gambaran, indeks dari array tersebut adalah
+
+/*
+
+[
+
+[(0,0), (0,1), (0,2)],
+
+[(1,0), (1,1), (1,2)],
+
+[(2,0), (2,1), (2,2)]
+
+]
+
+*/
+
+void main() {
+
+print(arrayMulti[0][0]);// 1
+
+print(arrayMulti[1][0]);// 4
+
+print(arrayMulti[2][1]);// 8
+
+}
+
+5. Method yang ada pada List dan maps
+Ketika membuat aplikasi, kita pasti akan berurusan dengan yang namanya List. Pada kali ini kita akan mengambil utility method list dari Dart yang sering digunakan dan diterapkan.
+forEach()
+function untuk menampilkan tiap-tiap elements.
+var perusahaan = [‘bukalapak’, ‘tokopedia’, ‘blibli’];
+perusahaan.forEach((data)=> print(data)); bukalapak tokopedia blibli
+contains()
+Mengecekan element dalam list, yang mana return bool.
+var perusahaan = [‘bukalapak’, ‘tokopedia’, ‘blibli’, ‘salestock’];
+ print(perusahaan.contains(‘bukalapak’));
+ 
+sort()
+untuk melakukan sorting pengurutan dalam list.
+
+ 
+var randomdata = [1,3,5,20,4,2];
+ randomdata.sort((a, b)=> a.compareTo(b));
+ print(randomdata);
+ 
+reduce(), fold()
+kompres list pada element jadi single value.
+  var randomdata = [1, 3, 5, 20, 4, 2];
+  randomdata.sort((a, b) => a.compareTo(b));
+  print(randomdata);
+  var sumData = randomdata.reduce((cur, next) => cur + next);
+  print(sumData);
+  const currentValue = 10;
+  //var currentValue = [1, 2, 3, 4, 5];
+  var nextSum =
+      randomdata.fold<int>(currentValue, (cur, next) => cur + next);
+  print(nextSum); // 45
+every()
+untuk melakukan check, apakah tiap element yang di iterasi memenuhi test
+
+ 
+List<Map<String, dynamic>> listUser = [
+ {‘nama’: ‘bekasi’, ‘umur’: 240},
+ {‘nama’: ‘boyolali’, ‘umur’: 200},
+ {‘nama’: ‘jakarta’, ‘umur’: 100},
+ {‘nama’: ‘surabaya’, ‘umur’: 100},
+];var example = listUser.every((data) => data[‘umur’] >= 100);
+print(example); ///true
+ 
+where(), firstWhere(), singleWhere()
+mengembalikan nilai list setelah memenuhi kondisi.
+
+ 
+var userYoung = listUser.where((data)=> data[‘umur’] > 100);
+ print(userYoung);
+ 
+ var userFirstYoung = listUser.firstWhere((data)=> data[‘umur’] < 200);
+ print(userFirstYoung); /// {‘nama’: ‘jakarta’, ‘umur’: 100},
+ 
+ var userSingle = listUser.singleWhere((data)=> data[‘umur’] <= 100);
+ print(userSingle); /// error karena ada dua kondisi yang benar
+ 
+firstWhere itu ngambil list pertama dari banyak element true, dan singleWhere itu adalah kondisi true hanya boleh satu.
+
+ 
+take(), skip()
+ingin mengambil beberapa element dari banyaknya data pada list, gunakan method take() dan skip()
+
+ 
+var dataTestCase = [1, 2, 3, 4, 10, 90];
+print(dataTestCase.take(2)); /// (1, 2)
+print(dataTestCase.skip(2)); /// (3, 4, 10, 90)
+expand()
+ingin melakukan flatMap? sangat bisa dengan menggunakan expand()
+
+ 
+var pairs = [[1, 2], [‘a’, ‘b’], [3, 4]];
+var flatmaps = pairs.expand((pair)=> pair);
+print(flatmaps);
+ 
+List Comprehensions
+ini bukan method tapi ini adalah update terbaru dari dart 2.3.2 yang mana Dart bisa membuat list comprehension seperti pada bahasa pemogramman python.
+
+ 
+var comph = [1,2,3,4];
+var newCom = [for(var a in comph) ‘new ${a}’];
+
+
+Add dan AddAll
+
+ini merupakan method yang di pakai untuk menambahkan index pada list kita contohnya :
+
+void main(){
+
+  List<int> myList = [];
+
+  List<int> list = [1,2,3];
+
+  myList.add(1);
+
+  myList.addAll(list);
+
+  myList.forEach((bilangan)=>{
+
+    print(bilangan)
+
+});
+
+}
